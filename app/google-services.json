@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "112558661017",
+    "firebase_url": "https://promociones-ulima.firebaseio.com",
+    "project_id": "promociones-ulima",
+    "storage_bucket": "promociones-ulima.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112558661017:android:4329c462e035862c",
+        "android_client_info": {
+          "package_name": "pe.edu.ulima.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "112558661017-25m22ql64tcpjju548mvo0rgdvt99bsc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkmN8f23PNR18XAqxGx-IIbcrjzpWUQgU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
