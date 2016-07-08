@@ -27,7 +27,6 @@ dependencies {
     compile 'com.google.firebase:firebase-core:9.0.0'
     compile 'com.facebook.android:facebook-android-sdk:[4,5)'
     compile 'com.google.code.gson:gson:2.4'
-    compile 'com.google.android.gms:play-services-auth:8.4.0'
     compile 'com.android.support:design:23.3.0'
 }
 
