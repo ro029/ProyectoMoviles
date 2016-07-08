@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
                 Log.i(TAG, "Facebook.AccessTokenTracker.OnCurrentAccessTokenChanged");
-                MainActivity.this.onFacebookAccessTokenChange(currentAccessToken);*/
-            }
+                MainActivity.this.onFacebookAccessTokenChange(currentAccessToken);
+            }*/
 
         };
 
@@ -42,4 +42,3 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-}
