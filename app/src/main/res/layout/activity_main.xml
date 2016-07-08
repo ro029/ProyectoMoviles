@@ -15,7 +15,7 @@
         <ImageView
             android:layout_width="175dp"
             android:layout_height="266dp"
-            android:src="@drawable/ulimaLOGO"
+            android:src="@drawable/ulimalogo"
             android:layout_alignParentTop="true"/>
     </LinearLayout>
 
