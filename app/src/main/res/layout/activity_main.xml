@@ -35,7 +35,8 @@
             android:textAlignment="center"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:inputType="text"/>
+            android:inputType="textEmailAddress"
+            />
 
         <EditText
             android:layout_width="match_parent"
@@ -46,8 +47,11 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
+            android:id="@+id/etepassword"
+            android:inputType="textPassword"
             />
         <Button
+            android:id="@+id/boton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ingresar"
@@ -56,5 +60,11 @@
             android:textSize="18dp"
             android:background="#BF0E0E"
             />
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/button_facebook_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
     </LinearLayout>
 </RelativeLayout>
