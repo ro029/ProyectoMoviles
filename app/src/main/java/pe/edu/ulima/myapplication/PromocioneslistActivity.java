@@ -1,12 +1,18 @@
 package pe.edu.ulima.myapplication;
 
+import android.content.res.Configuration;
 import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -89,5 +95,66 @@ public class PromocioneslistActivity extends ActionBarActivity {
         if (savedInstanceState == null) {
             selectItem(0);
         }
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (drawerToggle.onOptionsItemSelected(item)) {
+            // Toma los eventos de selección del toggle aquí
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    /* La escucha del ListView en el Drawer */
+    private class DrawerItemClickListener implements ListView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            selectItem(position);
+        }
+    }
+
+    private void selectItem(int position) {
+        // Reemplazar el contenido del layout principal por un fragmento
+        DataActivity fragment = new DataActivity();
+        Bundle args = new Bundle();
+        args.putInt(DataActivity.ARG_ARTICLES_NUMBER, position);
+        fragment.setArguments(args);
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+
+        // Se actualiza el item seleccionado y el título, después de cerrar el drawer
+        drawerList.setItemChecked(position, true);
+        setTitle(tagTitles[position]);
+        drawerLayout.closeDrawer(drawerList);
+    }
+
+    /* Método auxiliar para setear el titulo de la action bar */
+    @Override
+    public void setTitle(CharSequence title) {
+        itemTitle = title;
+        getSupportActionBar().setTitle(itemTitle);
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        // Sincronizar el estado del drawer
+        drawerToggle.syncState();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        // Cambiar las configuraciones del drawer si hubo modificaciones
+        drawerToggle.onConfigurationChanged(newConfig);
     }
 }
