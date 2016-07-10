@@ -17,6 +17,7 @@
         <item>Otros Productos y Servicios</item>
         <item>Escaner QR</item>
         <item>Sugerencias</item>
+        <item>Salir</item>
     </string-array>
 
     <string name="drawer_open">Abrir navigation drawer</string>

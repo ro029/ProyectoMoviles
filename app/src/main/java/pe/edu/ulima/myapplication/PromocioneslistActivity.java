@@ -55,6 +55,7 @@ public class PromocioneslistActivity extends ActionBarActivity {
         items.add(new DrawerItem(tagTitles[8], R.drawable.ic_otros));
         items.add(new DrawerItem(tagTitles[9], R.drawable.ic_qr));
         items.add(new DrawerItem(tagTitles[10], R.drawable.ic_sugerencias));
+        items.add(new DrawerItem(tagTitles[11], R.drawable.ic_salir));
 
 
 
