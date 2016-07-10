@@ -2,7 +2,6 @@ package pe.edu.ulima.myapplication;
 
 
 public class DrawerItem  {
-
     private String name;
     private int iconId;
 

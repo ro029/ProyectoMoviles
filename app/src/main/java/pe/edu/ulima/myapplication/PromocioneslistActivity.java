@@ -1,11 +1,14 @@
 package pe.edu.ulima.myapplication;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -29,7 +32,7 @@ public class PromocioneslistActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_promocioneslist);
 
         itemTitle = activityTitle = getTitle();
         tagTitles = getResources().getStringArray(R.array.Tags);
@@ -37,7 +40,7 @@ public class PromocioneslistActivity extends ActionBarActivity {
         drawerList = (ListView) findViewById(R.id.left_drawer);
 
         // Setear una sombra sobre el contenido principal cuando el drawer se despliegue
-        drawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
+        //drawerLayout.setDrawerShadow (R.drawable.drawer_shadow, GravityCompat.START);
 
         //Crear elementos de la lista
         ArrayList<DrawerItem> items = new ArrayList<DrawerItem>();
@@ -56,6 +59,7 @@ public class PromocioneslistActivity extends ActionBarActivity {
 
 
         // Relacionar el adaptador y la escucha de la lista del drawer
+
         drawerList.setAdapter(new DrawerListAdapter(this, items));
         drawerList.setOnItemClickListener(new DrawerItemClickListener());
 
@@ -156,5 +160,22 @@ public class PromocioneslistActivity extends ActionBarActivity {
         super.onConfigurationChanged(newConfig);
         // Cambiar las configuraciones del drawer si hubo modificaciones
         drawerToggle.onConfigurationChanged(newConfig);
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this).setIcon(android.R.drawable.ic_dialog_alert).setTitle("Salir")
+                .setMessage("Esta seguro de Salir")
+                .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent mainIntent = new Intent(PromocioneslistActivity.this,MainActivity.class);
+                        PromocioneslistActivity.this.startActivity(mainIntent);
+                        PromocioneslistActivity.this.finish();
+
+                        /*finish();
+                        System.exit(0);*/
+                    }
+                }).setNegativeButton("No", null).show();
     }
 }
