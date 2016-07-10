@@ -5,11 +5,9 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -136,10 +134,20 @@ public class PromocioneslistActivity extends ActionBarActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
 
-        // Se actualiza el item seleccionado y el título, después de cerrar el drawer
         drawerList.setItemChecked(position, true);
         setTitle(tagTitles[position]);
         drawerLayout.closeDrawer(drawerList);
+        // Se actualiza el item seleccionado y el título, después de cerrar el drawer
+        /*if(position==0){
+            Intent intent = new Intent(PromocioneslistActivity.this, PromocionesActivity.class);
+            startActivity(intent);
+
+        }else if(position==1){
+            Intent intent = new Intent(PromocioneslistActivity.this, CulturaActivity.class);
+            startActivity(intent);
+        }*/
+
+
     }
 
     /* Método auxiliar para setear el titulo de la action bar */

@@ -147,9 +147,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                         Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
 
 
-                        /*Intent mainIntent = new Intent(MainActivity.this,InicioActivity.class);
-                        MainActivity.this.startActivity(mainIntent);
-                        MainActivity.this.finish();*/
+
                         // If sign in fails, display a message to the user. If sign in succeeds
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.

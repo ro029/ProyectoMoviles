@@ -17,7 +17,7 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".InicioActivity" />
+        <activity android:name=".PromocionesActivity" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -29,7 +29,8 @@
         </activity>
         <activity android:name=".PromocioneslistActivity" />
         <activity android:name=".DrawerItem" />
-        <activity android:name=".DataActivity"></activity>
+        <activity android:name=".DataActivity" />
+        <activity android:name=".CulturaActivity"></activity>
     </application>
 
 </manifest>
