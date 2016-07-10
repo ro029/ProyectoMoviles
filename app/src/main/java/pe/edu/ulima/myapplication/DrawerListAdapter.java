@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by Rossy on 09/07/2016.
  */
-public class DrawerListAdapter {
+public class DrawerListAdapter extends ArrayAdapter<DrawerItem> {
     public DrawerListAdapter(Context context, List<DrawerItem> objects) {
         super(context, 0, objects);
     }
@@ -39,6 +39,4 @@ public class DrawerListAdapter {
         return convertView;
     }
 
-    private DrawerItem getItem(int position) {
-    }
 }

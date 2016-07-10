@@ -1,9 +1,7 @@
 package pe.edu.ulima.myapplication;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
-public class DrawerItem extends AppCompatActivity {
+public class DrawerItem  {
 
     private String name;
     private int iconId;
