@@ -23,7 +23,8 @@
         android:background="@drawable/fondoc"
         android:layout_marginTop="272dp"
         android:layout_alignTop="@+id/logopu"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
         <EditText
             android:id="@+id/eteuser"
             android:layout_width="match_parent"
@@ -31,7 +32,7 @@
             android:hint="Ingrese su Usuario"
             android:layout_gravity="center_horizontal"
             android:textColorHint="#FFFF"
-            android:paddingTop="72dp"
+            android:paddingTop="64dp"
             android:textAlignment="center"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
@@ -44,7 +45,6 @@
             android:hint="Ingrese su contraseña"
             android:textColorHint="#FFFF"
             android:textAlignment="center"
-            android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:id="@+id/etepassword"
@@ -59,7 +59,7 @@
             android:layout_marginLeft="20dp"
             android:textSize="18dp"
             android:background="#BF0E0E"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="8dp"
 
             />
 
@@ -70,6 +70,6 @@
             android:layout_gravity="center"
             android:textSize="20dp"
             android:textStyle="normal"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="8dp" />
     </LinearLayout>
 </RelativeLayout>
