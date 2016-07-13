@@ -16,25 +16,26 @@
 
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".PromocionesActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".PromocionesActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SplashActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PromocioneslistActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".DrawerItem" />
+        <activity
+            android:name=".PromocioneslistActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".DrawerActivity" />
         <activity android:name=".DataActivity" />
-        <activity android:name=".CulturaActivity"></activity>
     </application>
 
 </manifest>

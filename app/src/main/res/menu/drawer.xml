@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/promociones"
+            android:checked="false"
+            android:icon="@drawable/ic_promociones"
+            android:title="Promociones" />
+
+        <item
+            android:id="@+id/cultura"
+            android:checked="false"
+            android:icon="@drawable/ic_cultura"
+            android:title="Cultura y entretenimiento" />
+
+        <item
+            android:id="@+id/deportes"
+            android:checked="false"
+            android:icon="@drawable/ic_deportes"
+            android:title="Deportes" />
+
+        <item
+            android:id="@+id/idiomas"
+            android:checked="false"
+            android:icon="@drawable/ic_estudios"
+            android:title="Idiomas y otros estudios" />
+
+
+        <item
+            android:id="@+id/restaurantes"
+            android:checked="false"
+            android:icon="@drawable/ic_restaurantes"
+            android:title="Restaurantes" />
+        <item
+            android:id="@+id/ropa"
+            android:checked="false"
+            android:icon="@drawable/ic_ropas"
+            android:title="Ropa y accesorios" />
+        <item
+        android:id="@+id/salud"
+        android:checked="false"
+        android:icon="@drawable/ic_salud"
+        android:title="Salud" />
+        <item
+            android:id="@+id/turismo"
+            android:checked="false"
+            android:icon="@drawable/ic_turismo"
+            android:title="Turismo" />
+        <item
+            android:id="@+id/otros"
+            android:checked="false"
+            android:icon="@drawable/ic_otros"
+            android:title="Otros productos y servicios" />
+        <item
+            android:id="@+id/qr"
+            android:checked="false"
+            android:icon="@drawable/ic_qr"
+            android:title="QR" />
+        <item
+            android:id="@+id/Salir"
+            android:checked="false"
+            android:icon="@drawable/ic_salir"
+            android:title="Salir" />
+
+    </group>
+</menu>
