@@ -3,6 +3,8 @@ package pe.edu.ulima.myapplication;
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 /**
  * Created by CarlosGabriel on 8/07/2016.
  */
@@ -29,5 +31,9 @@ public class BaseActivity extends AppCompatActivity{
     public void onStop() {
         super.onStop();
         hideProgressDialog();
+    }
+
+    public String getUid() {
+        return FirebaseAuth.getInstance().getCurrentUser().getUid();
     }
 }

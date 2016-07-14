@@ -26,9 +26,6 @@ public class PromocionesActivity extends AppCompatActivity {
                         Intent mainIntent = new Intent(PromocionesActivity.this,MainActivity.class);
                         PromocionesActivity.this.startActivity(mainIntent);
                         PromocionesActivity.this.finish();
-
-                        /*finish();
-                        System.exit(0);*/
                     }
                 }).setNegativeButton("No", null).show();
     }

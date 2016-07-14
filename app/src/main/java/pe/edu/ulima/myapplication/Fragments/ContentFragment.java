@@ -1,4 +1,4 @@
-package pe.edu.ulima.myapplication;
+package pe.edu.ulima.myapplication.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,12 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by Admin on 04-06-2015.
- */
+import pe.edu.ulima.myapplication.R;
+
 public class ContentFragment extends Fragment {
 
-    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.content_fragment,container,false);

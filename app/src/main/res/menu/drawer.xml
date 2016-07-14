@@ -55,6 +55,11 @@
             android:icon="@drawable/ic_otros"
             android:title="Otros productos y servicios" />
         <item
+            android:id="@+id/sugerencia"
+            android:checked="false"
+            android:icon="@drawable/ic_sugerencias"
+            android:title="Sugerencia" />
+        <item
             android:id="@+id/qr"
             android:checked="false"
             android:icon="@drawable/ic_qr"

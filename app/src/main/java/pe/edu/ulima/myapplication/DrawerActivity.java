@@ -1,12 +1,7 @@
 package pe.edu.ulima.myapplication;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -18,16 +13,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.SubMenu;
 import android.view.View;
-import android.view.Window;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.zxing.Result;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
-import pe.edu.ulima.myapplication.ContentFragment;
-import pe.edu.ulima.myapplication.R;
+import pe.edu.ulima.myapplication.Fragments.ContentFragment;
+import pe.edu.ulima.myapplication.Fragments.CulturaActivity;
 
 public class DrawerActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler{
 
@@ -42,16 +36,21 @@ public class DrawerActivity extends AppCompatActivity implements ZXingScannerVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
+        //Log.i("correoA",getIntent().getStringExtra("correo"));
+
 
         // Initializing Toolbar and setting it as the actionbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
 
+
         //Initializing NavigationView
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
         navigationView.setItemIconTintList(null);
-
-
+        View viewHeader = LayoutInflater.from(this).inflate(R.layout.header, navigationView, false);
+        ((TextView) viewHeader.findViewById(R.id.email)).setText(getIntent().getStringExtra("correo"));
+        Toast.makeText(DrawerActivity.this,getIntent().getStringExtra("correo"),Toast.LENGTH_SHORT);
+        navigationView.addHeaderView(viewHeader);
         //Setting Navigation View Item Selected Listener to handle the item click of the navigation menu
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 
@@ -60,15 +59,15 @@ public class DrawerActivity extends AppCompatActivity implements ZXingScannerVie
             public boolean onNavigationItemSelected(MenuItem menuItem) {
 
 
-                //Checking if the item is in checked state or not, if not make it in checked state
-                if(menuItem.isChecked()) menuItem.setChecked(false);
-                else menuItem.setChecked(true);
+                    //Checking if the item is in checked state or not, if not make it in checked state
+                    if(menuItem.isChecked()) menuItem.setChecked(false);
+                    else menuItem.setChecked(true);
 
-                //Closing drawer on item click
-                drawerLayout.closeDrawers();
+                    //Closing drawer on item click
+                    drawerLayout.closeDrawers();
 
-                //Check to see which item was being clicked and perform appropriate action
-                switch (menuItem.getItemId()){
+                    //Check to see which item was being clicked and perform appropriate action
+                    switch (menuItem.getItemId()){
 
 
                     //Replacing the main content with ContentFragment Which is our Inbox View;
@@ -78,38 +77,63 @@ public class DrawerActivity extends AppCompatActivity implements ZXingScannerVie
                         android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.frame,fragment);
                         fragmentTransaction.commit();
+                        toolbar.setTitle("Promociones");
+
                         return true;
 
                     // For rest of the options we just show a toast on click
 
                     case R.id.cultura:
-                        Toast.makeText(getApplicationContext(),"Stared Selected",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Cultura",Toast.LENGTH_SHORT).show();
+                        CulturaActivity cultura=new CulturaActivity();
+                        android.support.v4.app.FragmentTransaction transaccionCultura = getSupportFragmentManager().beginTransaction();
+                        transaccionCultura.replace(R.id.frame,cultura);
+                        transaccionCultura.commit();
+                        toolbar.setTitle("Cultura");
+
+
+
                         return true;
                     case R.id.deportes:
                         Toast.makeText(getApplicationContext(),"Send Selected",Toast.LENGTH_SHORT).show();
+                        toolbar.setTitle("Deportes");
                         return true;
                     case R.id.idiomas:
                         Toast.makeText(getApplicationContext(),"Drafts Selected",Toast.LENGTH_SHORT).show();
+                        toolbar.setTitle("Idiomas");
                         return true;
                     case R.id.restaurantes:
                         Toast.makeText(getApplicationContext(),"All Mail Selected",Toast.LENGTH_SHORT).show();
+                        toolbar.setTitle("Restaurantes");
                         return true;
                     case R.id.ropa:
                         Toast.makeText(getApplicationContext(),"Trash Selected",Toast.LENGTH_SHORT).show();
+                        toolbar.setTitle("Ropa");
                         return true;
                     case R.id.salud:
                         Toast.makeText(getApplicationContext(),"Spam Selected",Toast.LENGTH_SHORT).show();
+                        toolbar.setTitle("Salud");
                         return true;
                     case R.id.turismo:
                         Toast.makeText(getApplicationContext(),"Spam Selected",Toast.LENGTH_SHORT).show();
+                        toolbar.setTitle("Turismo");
                         return true;
                     case R.id.otros:
                         Toast.makeText(getApplicationContext(),"Spam Selected",Toast.LENGTH_SHORT).show();
+                        toolbar.setTitle("Otros");
+                        return true;
+                    case R.id.sugerencia:
+                        Toast.makeText(getApplicationContext(),"Spam Selected",Toast.LENGTH_SHORT).show();
+                        toolbar.setTitle("Sugerencia");
                         return true;
                     case R.id.qr:
+
                         mScannerView = new ZXingScannerView(DrawerActivity.this);
                         setContentView(mScannerView);
                         mScannerView.setResultHandler(DrawerActivity.this);
+                        mScannerView.startCamera();
+
+
 
                         return true;
                     case R.id.Salir:
@@ -150,6 +174,11 @@ public class DrawerActivity extends AppCompatActivity implements ZXingScannerVie
             @Override
             public void onDrawerOpened(View drawerView) {
                 // Code here will be triggered once the drawer open as we dont want anything to happen so we leave this blank
+                /*
+                correo=(TextView) drawerView.findViewById(R.id.email);
+                correo.setText(getIntent().getStringExtra("correo"));*/
+
+
 
                 super.onDrawerOpened(drawerView);
             }
@@ -209,6 +238,8 @@ public class DrawerActivity extends AppCompatActivity implements ZXingScannerVie
 
     @Override
     public void handleResult(Result rawResult) {
+        // Do something with the result here
+
         Log.e("handler", rawResult.getText()); // Prints scan results
         Log.e("handler", rawResult .getBarcodeFormat().toString()); // Prints the scan format (qrcode)
 
@@ -219,7 +250,10 @@ public class DrawerActivity extends AppCompatActivity implements ZXingScannerVie
         AlertDialog alert1 = builder.create();
         alert1.show();
 
+
+        // If you would like to resume scanning, call this method below:
         mScannerView.resumeCameraPreview(this);
     }
+
 }
 

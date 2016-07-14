@@ -34,8 +34,6 @@ public class DrawerListAdapter extends ArrayAdapter<DrawerItem> {
         DrawerItem item = getItem(position);
         icon.setImageResource(item.getIconId());
         name.setText(item.getName());
-
-
         return convertView;
     }
 

@@ -187,7 +187,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                             Toast.makeText(MainActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }else{
-                            Intent mainIntent = new Intent(MainActivity.this,PromocioneslistActivity.class);
+                            Intent mainIntent = new Intent(MainActivity.this,DrawerActivity.class);
                             MainActivity.this.startActivity(mainIntent);
                             MainActivity.this.finish();
                         }
@@ -290,7 +290,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                             Intent mainIntent = new Intent(MainActivity.this,DrawerActivity.class);
                             MainActivity.this.startActivity(mainIntent);
                             MainActivity.this.finish();
+                            mainIntent.putExtra("correo",mAuth.getCurrentUser().getEmail());
                             LoginManager.getInstance().logOut();
+                            Log.i("correo",mAuth.getCurrentUser().getEmail());
 
 
 
