@@ -20,8 +20,10 @@ import android.widget.Toast;
 import com.google.zxing.Result;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
-import pe.edu.ulima.myapplication.Fragments.ContentFragment;
 import pe.edu.ulima.myapplication.Fragments.CulturaActivity;
+import pe.edu.ulima.myapplication.Fragments.DeportesActivity;
+import pe.edu.ulima.myapplication.Fragments.IdiomasActivity;
+import pe.edu.ulima.myapplication.Fragments.PromocionesFragment;
 
 public class DrawerActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler{
 
@@ -42,7 +44,10 @@ public class DrawerActivity extends AppCompatActivity implements ZXingScannerVie
         // Initializing Toolbar and setting it as the actionbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
-
+        PromocionesFragment promocionActivity = new PromocionesFragment();
+        android.support.v4.app.FragmentTransaction fragmentPromocion = getSupportFragmentManager().beginTransaction();
+        fragmentPromocion.replace(R.id.frame,promocionActivity);
+        fragmentPromocion.commit();
 
         //Initializing NavigationView
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
@@ -72,11 +77,11 @@ public class DrawerActivity extends AppCompatActivity implements ZXingScannerVie
 
                     //Replacing the main content with ContentFragment Which is our Inbox View;
                     case R.id.promociones:
-                        Toast.makeText(getApplicationContext(),"Inbox Selected",Toast.LENGTH_SHORT).show();
-                        ContentFragment fragment = new ContentFragment();
-                        android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.frame,fragment);
-                        fragmentTransaction.commit();
+                        Toast.makeText(getApplicationContext(),"Promocion",Toast.LENGTH_SHORT).show();
+                        PromocionesFragment promocionActivity = new PromocionesFragment();
+                        android.support.v4.app.FragmentTransaction fragmentPromocion = getSupportFragmentManager().beginTransaction();
+                        fragmentPromocion.replace(R.id.frame,promocionActivity);
+                        fragmentPromocion.commit();
                         toolbar.setTitle("Promociones");
 
                         return true;
@@ -89,18 +94,26 @@ public class DrawerActivity extends AppCompatActivity implements ZXingScannerVie
                         android.support.v4.app.FragmentTransaction transaccionCultura = getSupportFragmentManager().beginTransaction();
                         transaccionCultura.replace(R.id.frame,cultura);
                         transaccionCultura.commit();
-                        toolbar.setTitle("Cultura");
+                        toolbar.setTitle("Cultura y entretenimiento");
 
 
 
                         return true;
                     case R.id.deportes:
-                        Toast.makeText(getApplicationContext(),"Send Selected",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Deportes",Toast.LENGTH_SHORT).show();
+                        DeportesActivity deportesActivity=new DeportesActivity();
+                        android.support.v4.app.FragmentTransaction transaccionDeportes = getSupportFragmentManager().beginTransaction();
+                        transaccionDeportes.replace(R.id.frame,deportesActivity);
+                        transaccionDeportes .commit();
                         toolbar.setTitle("Deportes");
                         return true;
                     case R.id.idiomas:
-                        Toast.makeText(getApplicationContext(),"Drafts Selected",Toast.LENGTH_SHORT).show();
-                        toolbar.setTitle("Idiomas");
+                        Toast.makeText(getApplicationContext(),"Idiomas",Toast.LENGTH_SHORT).show();
+                        IdiomasActivity idiomasActivity=new IdiomasActivity();
+                        android.support.v4.app.FragmentTransaction transaccionidiomas = getSupportFragmentManager().beginTransaction();
+                        transaccionidiomas.replace(R.id.frame,idiomasActivity);
+                        transaccionidiomas .commit();
+                        toolbar.setTitle("Idiomas y otros estudios");
                         return true;
                     case R.id.restaurantes:
                         Toast.makeText(getApplicationContext(),"All Mail Selected",Toast.LENGTH_SHORT).show();
