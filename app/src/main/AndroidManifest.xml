@@ -35,7 +35,8 @@
             android:name=".PromocioneslistActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".DrawerActivity" />
-        <activity android:name=".Fragments.CulturaActivity"></activity>
+        <activity android:name=".Fragments.CulturaActivity" />
+        <activity android:name=".Fragments.IdiomasActivity"></activity>
     </application>
 
 </manifest>
