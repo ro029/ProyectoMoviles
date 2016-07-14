@@ -15,6 +15,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 import java.util.zip.Inflater;
 
+import pe.edu.ulima.myapplication.DrawerActivity;
 import pe.edu.ulima.myapplication.R;
 import pe.edu.ulima.myapplication.beans.Cultura;
 
@@ -54,7 +55,8 @@ public class AdapterRecicler extends RecyclerView.Adapter<AdapterRecicler.ViewHo
         holder.mview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent mainIntent = new Intent(v.getContext(),DrawerActivity.class);
+                v.getContext().startActivity(mainIntent);
             }
         });
     }
@@ -88,6 +90,6 @@ public class AdapterRecicler extends RecyclerView.Adapter<AdapterRecicler.ViewHo
         }
     }
     public interface clicListener{
-        void
+        void Onclick();
     }
 }

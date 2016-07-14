@@ -1,6 +1,7 @@
 package pe.edu.ulima.myapplication.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,8 @@ import org.w3c.dom.Text;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import pe.edu.ulima.myapplication.DetalleActivity;
+import pe.edu.ulima.myapplication.DrawerActivity;
 import pe.edu.ulima.myapplication.R;
 import pe.edu.ulima.myapplication.beans.Cultura;
 
@@ -56,6 +59,15 @@ public class Adapter extends BaseAdapter{
         Cultura cultura=(Cultura) getItem(position);
         titulo.setText(cultura.getTitulo());
         Picasso.with(context).load(cultura.getFoto()).into(imagen);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mainIntent = new Intent(v.getContext(),DetalleActivity.class);
+                v.getContext().startActivity(mainIntent);
+
+            }
+        });
         return view;
+
     }
 }
