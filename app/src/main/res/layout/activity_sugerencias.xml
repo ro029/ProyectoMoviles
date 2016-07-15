@@ -6,22 +6,25 @@
     android:layout_marginLeft="30dp"
     >
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/eteSugerencias"
+        android:id="@+id/logopu"
+        android:layout_width="249dp"
+        android:layout_height="378dp"
         android:src="@drawable/promocioneslogo"
+        android:layout_marginBottom="285dp"
         android:layout_alignParentTop="true"
-        android:paddingBottom="20dp"
-        android:paddingTop="30dp"/>
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@+id/eteSugerencias"/>
     <EditText
         android:id="@+id/eteSugerencias"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:hint="Ingrese su sugerencia"
         android:inputType="textMultiLine"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_above="@+id/btnSugerencia"/>
+        android:layout_above="@+id/btnSugerencia"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"/>
 
 
     <Button
@@ -33,13 +36,15 @@
         android:text="ENVIAR"
         android:layout_centerInParent="true"
         android:textColor="#FFFF"
+        android:layout_above="@+id/txtSuge"
         android:textSize="20dp"/>
 
     <TextView
+        android:id="@+id/txtSuge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnSugerencia"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:layout_alignParentBottom="true"
         android:text="Cualquier sugerencia será bien recibida por nosotros. Gracias por su tiempo, será bien recompensado."
         android:textStyle="italic"
