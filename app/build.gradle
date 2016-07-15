@@ -35,7 +35,7 @@ dependencies {
     compile 'me.dm7.barcodescanner:zxing:1.8.4'
     compile 'com.yqritc:recyclerview-flexibledivider:1.4.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
-    compile 'com.google.android.gms:play-services:9.2.1'
+    compile 'com.google.android.gms:play-services:9.0.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
