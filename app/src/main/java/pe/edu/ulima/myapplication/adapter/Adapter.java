@@ -58,7 +58,7 @@ public class Adapter extends BaseAdapter{
         CircleImageView imagen= (CircleImageView) view.findViewById(R.id.promocion);
         Cultura cultura=(Cultura) getItem(position);
         titulo.setText(cultura.getTitulo());
-        Picasso.with(context).load(cultura.getFoto()).into(imagen);
+        Picasso.with(context).load(cultura.getFoto()).fit().into(imagen);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

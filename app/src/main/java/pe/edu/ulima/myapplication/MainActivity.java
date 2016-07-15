@@ -190,6 +190,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                             Intent mainIntent = new Intent(MainActivity.this,DrawerActivity.class);
                             MainActivity.this.startActivity(mainIntent);
                             MainActivity.this.finish();
+                            mainIntent.putExtra("correo",mAuth.getCurrentUser().getEmail());
+                            mainIntent.putExtra("foto","http://www.androidcentral.com/sites/androidcentral.com/files/styles/large/public/topic_images/2016/android-kitkat-topic.png?itok=yP1nD_A3");
+                            startActivity(mainIntent);
+
                         }
 
                         // [START_EXCLUDE]
@@ -293,7 +297,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                             mainIntent.putExtra("correo",mAuth.getCurrentUser().getEmail());
                             mainIntent.putExtra("foto",mAuth.getCurrentUser().getPhotoUrl());
                             LoginManager.getInstance().logOut();
-                            Log.i("correo",mAuth.getCurrentUser().getEmail());
                             startActivity(mainIntent);
 
 
