@@ -291,8 +291,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                             MainActivity.this.startActivity(mainIntent);
                             MainActivity.this.finish();
                             mainIntent.putExtra("correo",mAuth.getCurrentUser().getEmail());
+                            mainIntent.putExtra("foto",mAuth.getCurrentUser().getPhotoUrl());
                             LoginManager.getInstance().logOut();
                             Log.i("correo",mAuth.getCurrentUser().getEmail());
+                            startActivity(mainIntent);
 
 
 

@@ -2,6 +2,7 @@ package pe.edu.ulima.myapplication;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -18,7 +19,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.zxing.Result;
+import com.squareup.picasso.Picasso;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 import pe.edu.ulima.myapplication.Fragments.CulturaActivity;
 import pe.edu.ulima.myapplication.Fragments.DeportesActivity;
@@ -56,7 +59,8 @@ public class DrawerActivity extends AppCompatActivity {
         navigationView.setItemIconTintList(null);
         View viewHeader = LayoutInflater.from(this).inflate(R.layout.header, navigationView, false);
         ((TextView) viewHeader.findViewById(R.id.email)).setText(getIntent().getStringExtra("correo"));
-        Toast.makeText(DrawerActivity.this,getIntent().getStringExtra("correo"),Toast.LENGTH_SHORT);
+        Picasso.with(viewHeader.getContext()).load((Uri) getIntent().getParcelableExtra("foto")).into((CircleImageView)  viewHeader.findViewById(R.id.profile_image));
+
         navigationView.addHeaderView(viewHeader);
         //Setting Navigation View Item Selected Listener to handle the item click of the navigation menu
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
