@@ -24,9 +24,10 @@ import pe.edu.ulima.myapplication.Fragments.CulturaActivity;
 import pe.edu.ulima.myapplication.Fragments.DeportesActivity;
 import pe.edu.ulima.myapplication.Fragments.IdiomasActivity;
 import pe.edu.ulima.myapplication.Fragments.PromocionesFragment;
+import pe.edu.ulima.myapplication.Fragments.QrActivity;
 import pe.edu.ulima.myapplication.Fragments.SugerenciasActivity;
 
-public class DrawerActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler{
+public class DrawerActivity extends AppCompatActivity {
 
     //Defining Variables
     private Toolbar toolbar;
@@ -146,10 +147,10 @@ public class DrawerActivity extends AppCompatActivity implements ZXingScannerVie
                         return true;
                     case R.id.qr:
 
-                        mScannerView = new ZXingScannerView(DrawerActivity.this);
-                        setContentView(mScannerView);
-                        mScannerView.setResultHandler(DrawerActivity.this);
-                        mScannerView.startCamera();
+                        Intent mainIntent = new Intent(DrawerActivity.this,QrActivity.class);
+                        DrawerActivity.this.startActivity(mainIntent);
+                        DrawerActivity.this.finish();
+                        Toast.makeText(getApplicationContext(),"Qr",Toast.LENGTH_SHORT).show();
 
 
 
@@ -254,24 +255,7 @@ public class DrawerActivity extends AppCompatActivity implements ZXingScannerVie
                 }).setNegativeButton("No", null).show();
     }
 
-    @Override
-    public void handleResult(Result rawResult) {
-        // Do something with the result here
 
-        Log.e("handler", rawResult.getText()); // Prints scan results
-        Log.e("handler", rawResult .getBarcodeFormat().toString()); // Prints the scan format (qrcode)
-
-        // show the scanner result into dialog box.
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Scan Result");
-        builder.setMessage(rawResult.getText());
-        AlertDialog alert1 = builder.create();
-        alert1.show();
-
-
-        // If you would like to resume scanning, call this method below:
-        mScannerView.resumeCameraPreview(this);
-    }
 
 }
 
