@@ -61,7 +61,16 @@
     <com.facebook.share.widget.ShareButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="start"
+
         />
+   <ImageView
+       android:id="@+id/mapita"
+       android:layout_width="48dp"
+       android:layout_height="40dp"
+       android:src="@drawable/mapita"
+       android:layout_gravity="start"
+       />
 
 
 
