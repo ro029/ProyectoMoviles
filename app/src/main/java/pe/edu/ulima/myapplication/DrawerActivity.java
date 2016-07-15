@@ -24,6 +24,7 @@ import pe.edu.ulima.myapplication.Fragments.CulturaActivity;
 import pe.edu.ulima.myapplication.Fragments.DeportesActivity;
 import pe.edu.ulima.myapplication.Fragments.IdiomasActivity;
 import pe.edu.ulima.myapplication.Fragments.PromocionesFragment;
+import pe.edu.ulima.myapplication.Fragments.SugerenciasActivity;
 
 public class DrawerActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler{
 
@@ -77,7 +78,7 @@ public class DrawerActivity extends AppCompatActivity implements ZXingScannerVie
 
                     //Replacing the main content with ContentFragment Which is our Inbox View;
                     case R.id.promociones:
-                        Toast.makeText(getApplicationContext(),"Promocion",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Promociones",Toast.LENGTH_SHORT).show();
                         PromocionesFragment promocionActivity = new PromocionesFragment();
                         android.support.v4.app.FragmentTransaction fragmentPromocion = getSupportFragmentManager().beginTransaction();
                         fragmentPromocion.replace(R.id.frame,promocionActivity);
@@ -89,7 +90,7 @@ public class DrawerActivity extends AppCompatActivity implements ZXingScannerVie
                     // For rest of the options we just show a toast on click
 
                     case R.id.cultura:
-                        Toast.makeText(getApplicationContext(),"Cultura",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Cultura y entretenimiento",Toast.LENGTH_SHORT).show();
                         CulturaActivity cultura=new CulturaActivity();
                         android.support.v4.app.FragmentTransaction transaccionCultura = getSupportFragmentManager().beginTransaction();
                         transaccionCultura.replace(R.id.frame,cultura);
@@ -108,7 +109,7 @@ public class DrawerActivity extends AppCompatActivity implements ZXingScannerVie
                         toolbar.setTitle("Deportes");
                         return true;
                     case R.id.idiomas:
-                        Toast.makeText(getApplicationContext(),"Idiomas",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Idiomas y otros estudios",Toast.LENGTH_SHORT).show();
                         IdiomasActivity idiomasActivity=new IdiomasActivity();
                         android.support.v4.app.FragmentTransaction transaccionidiomas = getSupportFragmentManager().beginTransaction();
                         transaccionidiomas.replace(R.id.frame,idiomasActivity);
@@ -116,28 +117,32 @@ public class DrawerActivity extends AppCompatActivity implements ZXingScannerVie
                         toolbar.setTitle("Idiomas y otros estudios");
                         return true;
                     case R.id.restaurantes:
-                        Toast.makeText(getApplicationContext(),"All Mail Selected",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Restaurantes",Toast.LENGTH_SHORT).show();
                         toolbar.setTitle("Restaurantes");
                         return true;
                     case R.id.ropa:
-                        Toast.makeText(getApplicationContext(),"Trash Selected",Toast.LENGTH_SHORT).show();
-                        toolbar.setTitle("Ropa");
+                        Toast.makeText(getApplicationContext(),"Ropa y accesorios",Toast.LENGTH_SHORT).show();
+                        toolbar.setTitle("Ropa y accesorios");
                         return true;
                     case R.id.salud:
-                        Toast.makeText(getApplicationContext(),"Spam Selected",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Salud",Toast.LENGTH_SHORT).show();
                         toolbar.setTitle("Salud");
                         return true;
                     case R.id.turismo:
-                        Toast.makeText(getApplicationContext(),"Spam Selected",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Turismo",Toast.LENGTH_SHORT).show();
                         toolbar.setTitle("Turismo");
                         return true;
                     case R.id.otros:
-                        Toast.makeText(getApplicationContext(),"Spam Selected",Toast.LENGTH_SHORT).show();
-                        toolbar.setTitle("Otros");
+                        Toast.makeText(getApplicationContext(),"Otros productos y servicios",Toast.LENGTH_SHORT).show();
+                        toolbar.setTitle("Otros productos y servicios");
                         return true;
                     case R.id.sugerencia:
-                        Toast.makeText(getApplicationContext(),"Spam Selected",Toast.LENGTH_SHORT).show();
-                        toolbar.setTitle("Sugerencia");
+                        Toast.makeText(getApplicationContext(),"Sugerencias",Toast.LENGTH_SHORT).show();
+                        SugerenciasActivity sugerenciasActivity=new SugerenciasActivity();
+                        android.support.v4.app.FragmentTransaction transaccionsugerencias = getSupportFragmentManager().beginTransaction();
+                        transaccionsugerencias.replace(R.id.frame,sugerenciasActivity);
+                        transaccionsugerencias .commit();
+                        toolbar.setTitle("Sugerencias");
                         return true;
                     case R.id.qr:
 

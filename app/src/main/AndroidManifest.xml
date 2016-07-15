@@ -35,8 +35,9 @@
             android:name=".PromocioneslistActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".DrawerActivity" />
-        <activity android:name=".DetalleActivity"></activity>
-        <activity android:name=".Fragments.PromocionesFragment"></activity>
+        <activity android:name=".DetalleActivity" />
+        <activity android:name=".Fragments.PromocionesFragment" />
+        <activity android:name=".Fragments.SugerenciasActivity"></activity>
     </application>
 
 </manifest>
