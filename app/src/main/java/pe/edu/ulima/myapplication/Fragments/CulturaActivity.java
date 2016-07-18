@@ -45,9 +45,8 @@ public class CulturaActivity extends Fragment {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot data : dataSnapshot.getChildren()){
-
                         cultura.add(data.getValue(Cultura.class));
-                        //Log.e("error",data.getValue()+ "");
+                        //Log.e("+ "");
 
                 }
 

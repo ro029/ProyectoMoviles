@@ -54,16 +54,25 @@ public class Adapter extends BaseAdapter{
     public View getView(int position, View convertView, ViewGroup parent) {
         View view=mInflater.inflate(R.layout.itemlista,parent,false);
 
-        TextView titulo=(TextView) view.findViewById(R.id.titulo);
+        final TextView titulo=(TextView) view.findViewById(R.id.titulo);
         CircleImageView imagen= (CircleImageView) view.findViewById(R.id.promocion);
-        Cultura cultura=(Cultura) getItem(position);
+        final Cultura cultura=(Cultura) getItem(position);
         titulo.setText(cultura.getTitulo());
-        Picasso.with(context).load(cultura.getFoto()).fit().into(imagen);
+        Picasso.with(context).load(cultura.getFoto()).into(imagen);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent mainIntent = new Intent(v.getContext(),DetalleActivity.class);
+                mainIntent.putExtra("titulo",cultura.getTitulo());
+                mainIntent.putExtra("foto",cultura.getFoto());
+                mainIntent.putExtra("condiciones",cultura.getCondiciones());
+                mainIntent.putExtra("descripcion",cultura.getDescripcion());
+                mainIntent.putExtra("fechatemporada",cultura.getFechaTemporada());
+                mainIntent.putExtra("lugar",cultura.getLugar());
+                mainIntent.putExtra("facebook",cultura.getFacebook());
+                mainIntent.putExtra("promocionul",cultura.getPromocionul());
                 v.getContext().startActivity(mainIntent);
+
 
             }
         });

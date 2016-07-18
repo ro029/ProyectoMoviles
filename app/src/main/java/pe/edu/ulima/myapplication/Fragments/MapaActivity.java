@@ -3,6 +3,8 @@ package pe.edu.ulima.myapplication.Fragments;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import pe.edu.ulima.myapplication.R;
+
 public class MapaActivity extends AppCompatActivity {
 
     @Override

@@ -35,16 +35,14 @@ public class DetalleActivity extends AppCompatActivity {
         rLugar=(TextView) findViewById(R.id.rLugar);
 
         Picasso.with(this)
-                .load("http://www.ulima.edu.pe/sites/default/files/imagenes-promociones/poster_cuentos_de_siempre_web.jpg")
-                .fit()
-                .centerCrop()
+                .load(getIntent().getStringExtra("foto"))
                 .into(rImagen);
-        rDescripcion.setText("'Cuentos de Siempre como Nunca' es el nuevo especticulo del famoso narrador de cuentos Francois Vallaeys, en el que los cuentos universales seran revelados como nunca antes, en versiones adultas: mas crudas, profundas y graciosas, acompanados con musica clasica interpretada en el piano por su hijo Loac. En este espectaculo, completamente nuevo, los grandes cuentos de la tradicion universal: Cenicienta, Blanca Nieves, Caperucita, Pulgarcito, etc, relatos tan trillados de la literatura infantil, seran redescubiertos traves de versiones tradicionales poco conocidas, de todas partes del mundo.");
-        rTitulo.setText("Cuentos de siempre como nunca");
-        rPromocion.setText("Descuentos especiales en entradas: Alumnos: S / .16(Precio normal S / .20) Docentes y administrativos: S / .32(Precio normal S / .40) ");
-        rCondiciones.setText("Promoci�n v�lida presentando carn� o fotocheck. && V�lida para todas las funciones de jueves a domingos a las 16.00 horas. ");
-        rFechaTemporada.setText("Jueves 7 al domingo 24 de julio de 2016 ");
-        rLugar.setText("san luis");
+        rDescripcion.setText(getIntent().getStringExtra("descripcion"));
+        rTitulo.setText(getIntent().getStringExtra("titulo"));
+        rPromocion.setText(getIntent().getStringExtra("promocionul"));
+        rCondiciones.setText(getIntent().getStringExtra("condiciones"));
+        rFechaTemporada.setText(getIntent().getStringExtra("fechatemporada"));
+        rLugar.setText(getIntent().getStringExtra("lugar"));
 
     }
 }
