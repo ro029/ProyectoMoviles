@@ -37,6 +37,9 @@ public class DetalleActivity extends AppCompatActivity {
         Picasso.with(this)
                 .load(getIntent().getStringExtra("foto"))
                 .into(rImagen);
+        if (getIntent().getStringExtra("descripcion")==null){
+            rDescripcion.setVisibility(View.INVISIBLE);
+        }
         rDescripcion.setText(getIntent().getStringExtra("descripcion"));
         rTitulo.setText(getIntent().getStringExtra("titulo"));
         rPromocion.setText(getIntent().getStringExtra("promocionul"));

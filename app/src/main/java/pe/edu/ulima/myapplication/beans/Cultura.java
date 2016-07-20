@@ -13,9 +13,9 @@ public class Cultura {
     private String promocionul;
     private String facebook;
     private String filtro;
+    private String fotoDetalle;
 
-
-    public Cultura(String foto, String titulo, String descripcion, String condiciones, String fechaTemporada, String lugar, String promocionul, String facebook, String filtro) {
+    public Cultura(String foto, String titulo, String descripcion, String condiciones, String fechaTemporada, String lugar, String promocionul, String facebook, String filtro, String fotoDetalle) {
         this.foto = foto;
         this.titulo = titulo;
         this.descripcion = descripcion;
@@ -25,6 +25,7 @@ public class Cultura {
         this.promocionul = promocionul;
         this.facebook = facebook;
         this.filtro = filtro;
+        this.fotoDetalle = fotoDetalle;
     }
 
     public Cultura() {
@@ -100,5 +101,13 @@ public class Cultura {
 
     public void setFiltro(String filtro) {
         this.filtro = filtro;
+    }
+
+    public String getFotoDetalle() {
+        return fotoDetalle;
+    }
+
+    public void setFotoDetalle(String fotoDetalle) {
+        this.fotoDetalle = fotoDetalle;
     }
 }

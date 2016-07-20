@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.google.zxing.Result;
 import com.squareup.picasso.Picasso;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import de.hdodenhof.circleimageview.CircleImageView;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 import pe.edu.ulima.myapplication.Fragments.CulturaActivity;
@@ -160,7 +161,7 @@ public class DrawerActivity extends AppCompatActivity {
 
                         return true;
                     case R.id.Salir:
-                        new AlertDialog.Builder(DrawerActivity.this)
+                        /*new AlertDialog.Builder(DrawerActivity.this)
                                 .setTitle("Delete entry")
                                 .setMessage("Are you sure you want to delete this entry?")
                                 .setPositiveButton("Si", new DialogInterface.OnClickListener() {
@@ -168,12 +169,27 @@ public class DrawerActivity extends AppCompatActivity {
                                     public void onClick(DialogInterface dialog, int which) {
                                         Intent mainIntent = new Intent(DrawerActivity.this,MainActivity.class);
                                         DrawerActivity.this.startActivity(mainIntent);
-                                        DrawerActivity.this.finish();
+                                        DrawerActivity.this.finish();*/
 
                         /*finish();
                         System.exit(0);*/
-                                    }
-                                }).setNegativeButton("No", null).show();
+                                 //   }
+                              //  }).setNegativeButton("No", null).show();
+                new SweetAlertDialog(DrawerActivity.this, SweetAlertDialog.WARNING_TYPE)
+                        .setTitleText("Quiere Salir")
+                        .setContentText("Usted saldra de su cuenta")
+                        .setCancelText("No")
+                        .setConfirmText("Si")
+                        .showCancelButton(true)
+                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                Intent mainIntent = new Intent(DrawerActivity.this,MainActivity.class);
+                                DrawerActivity.this.startActivity(mainIntent);
+                                DrawerActivity.this.finish();
+                            }
+                        })
+                        .show();
                         return true;
 
                     default:
@@ -244,19 +260,21 @@ public class DrawerActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        new AlertDialog.Builder(this).setIcon(android.R.drawable.ic_dialog_alert).setTitle("Salir")
-                .setMessage("Esta seguro de Salir")
-                .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+        new SweetAlertDialog(DrawerActivity.this, SweetAlertDialog.WARNING_TYPE)
+                .setTitleText("Quiere Salir")
+                .setContentText("Usted saldra de su cuenta")
+                .setCancelText("No")
+                .setConfirmText("Si")
+                .showCancelButton(true)
+                .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
+                    public void onClick(SweetAlertDialog sweetAlertDialog) {
                         Intent mainIntent = new Intent(DrawerActivity.this,MainActivity.class);
                         DrawerActivity.this.startActivity(mainIntent);
                         DrawerActivity.this.finish();
-
-                        /*finish();
-                        System.exit(0);*/
                     }
-                }).setNegativeButton("No", null).show();
+                })
+                .show();
     }
 
 

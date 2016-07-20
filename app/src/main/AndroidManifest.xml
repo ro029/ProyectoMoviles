@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="pe.edu.ulima.myapplication">
+    package="pe.edu.ulima.myapplication"
+
+    >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/jcon"
+        android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+
+        android:theme="@style/AppTheme"
+        android:screenOrientation="portrait" >
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />
+            android:value="@string/facebook_app_id"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".MainActivity"
@@ -34,12 +39,18 @@
         <activity
             android:name=".PromocioneslistActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".DrawerActivity" />
-        <activity android:name=".DetalleActivity" />
-        <activity android:name=".Fragments.PromocionesFragment" />
-        <activity android:name=".Fragments.SugerenciasActivity" />
-        <activity android:name=".Fragments.QrActivity" />
-        <activity android:name=".Fragments.MapaActivity"></activity>
+        <activity android:name=".DrawerActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".DetalleActivity"
+            android:screenOrientation="portrait"  />
+        <activity android:name=".Fragments.PromocionesFragment"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Fragments.SugerenciasActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Fragments.QrActivity"
+            android:screenOrientation="portrait"  />
+        <activity android:name=".Fragments.MapaActivity"
+            android:screenOrientation="portrait" ></activity>
     </application>
 
 </manifest>

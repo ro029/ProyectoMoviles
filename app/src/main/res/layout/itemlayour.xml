@@ -1,74 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+<LinearLayout
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginTop="20dp"
+    android:paddingBottom="40dp">
 
     <TextView
         android:id="@+id/rTitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Titulo"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:background="#FFFFFF"
         android:gravity="center"/>
 
     <ImageView
         android:id="@+id/rImagen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/card_height"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center"
-        android:src="@drawable/acd"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="La Obra"
-        />
+        android:src="@drawable/acd"
+        android:scaleType="fitXY"/>
     <TextView
         android:id="@+id/rDescripcion"
-        android:layout_width="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:paddingTop="10dp"
         android:layout_height="wrap_content"
-        android:text="........................................."/>
+        android:textSize="15dp"
+        android:text="........................................."
+        android:background="#FFFFFF"/>
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Promocion Ulima"/>
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:text="Promocion Ulima"
+        android:gravity="center"
+        android:background="#FFFFFF"/>
     <TextView
         android:id="@+id/rPromocionUl"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:textSize="15dp"
+        android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
+        android:background="#FFFFFF"
         android:text="........................................."/>
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:textStyle="bold"
         android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
         android:text="Condiciones"/>
     <TextView
         android:id="@+id/rCondiciones"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:textSize="15dp"
+        android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
+        android:background="#FFFFFF"
         android:text="........................................."/>
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="#FFFFFF"
         android:text="Fecha Temporada"/>
     <TextView
         android:id="@+id/rFechaTemporada"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:textSize="15dp"
+        android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
+        android:background="#FFFFFF"
         android:text="........................................."/>
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:textStyle="bold"
         android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:background="#FFFFFF"
+
         android:text="Lugar"/>
     <TextView
         android:id="@+id/rLugar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
         android:text="........................................."/>
 
-    <com.google.android.gms.maps.MapView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-    </com.google.android.gms.maps.MapView>
+
+
 
 
 
 </LinearLayout>
+</ScrollView>

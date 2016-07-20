@@ -1,7 +1,9 @@
 package pe.edu.ulima.myapplication.Fragments;
 
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,16 +24,19 @@ import pe.edu.ulima.myapplication.R;
 import pe.edu.ulima.myapplication.adapter.Adapter;
 import pe.edu.ulima.myapplication.beans.Cultura;
 
-public class IdiomasActivity extends Fragment {
+public class IdiomasActivity extends Fragment implements SwipeRefreshLayout.OnRefreshListener{
     ArrayList<Cultura> culturas=new ArrayList<>();
     private static DatabaseReference ref;
     Adapter adapter;
+    SwipeRefreshLayout mSwipeRefreshLayout;
     ListView lista;
     Cultura cultura;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_cultura,container,false);
+        mSwipeRefreshLayout = (SwipeRefreshLayout) v.findViewById(R.id.swiper);
+        mSwipeRefreshLayout.setOnRefreshListener(this);
         lista= (ListView) v.findViewById(R.id.listaCultura);
         return v;
     }
@@ -59,5 +64,15 @@ public class IdiomasActivity extends Fragment {
             }
         });
 
+    }
+
+    @Override
+    public void onRefresh() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mSwipeRefreshLayout.setRefreshing(false);
+            }
+        },5000);
     }
 }

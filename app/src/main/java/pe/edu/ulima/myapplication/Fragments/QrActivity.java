@@ -35,24 +35,24 @@ public class QrActivity extends AppCompatActivity implements ZXingScannerView.Re
 
         // show the scanner result into dialog box.
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Scan Result");
+        builder.setTitle("Resultado");
         builder.setMessage(rawResult.getText());
         AlertDialog alert1 = builder.create();
         alert1.show();
 
 
         // If you would like to resume scanning, call this method below:
-        //mScannerView.resumeCameraPreview(this);
+        mScannerView.resumeCameraPreview(this);
 
 
     }
 
-    @Override
+    /*@Override
     public void onBackPressed() {
 
         Intent mainIntent = new Intent(QrActivity.this,DrawerActivity.class);
         QrActivity.this.startActivity(mainIntent);
         QrActivity.this.finish();
 
-    }
+    }*/
 }

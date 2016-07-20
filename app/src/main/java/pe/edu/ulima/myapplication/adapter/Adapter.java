@@ -2,6 +2,7 @@ package pe.edu.ulima.myapplication.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import com.squareup.picasso.Picasso;
 import org.w3c.dom.Text;
 
 import java.util.List;
+import java.util.Random;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import pe.edu.ulima.myapplication.DetalleActivity;
@@ -73,10 +75,10 @@ public class Adapter extends BaseAdapter{
                 mainIntent.putExtra("promocionul",cultura.getPromocionul());
                 v.getContext().startActivity(mainIntent);
 
-
             }
         });
-        return view;
 
+        return view;
     }
+
 }

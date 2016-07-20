@@ -1,8 +1,10 @@
 package pe.edu.ulima.myapplication.Fragments;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,14 +26,17 @@ import pe.edu.ulima.myapplication.beans.Cultura;
 /**
  * Created by Rossy on 14/07/2016.
  */
-public class DeportesActivity extends Fragment {
+public class DeportesActivity extends Fragment implements SwipeRefreshLayout.OnRefreshListener{
     ArrayList<Cultura> culturas=new ArrayList<>();
     private static DatabaseReference ref;
+    SwipeRefreshLayout mSwipeRefreshLayout;
     Adapter adapter;
     ListView lista;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_cultura,container,false);
+        mSwipeRefreshLayout = (SwipeRefreshLayout) v.findViewById(R.id.swiper);
+        mSwipeRefreshLayout.setOnRefreshListener(this);
         lista= (ListView) v.findViewById(R.id.listaCultura);
         return v;
     }
@@ -61,4 +66,13 @@ public class DeportesActivity extends Fragment {
 
     }
 
+    @Override
+    public void onRefresh() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mSwipeRefreshLayout.setRefreshing(false);
+            }
+        },5000);
+    }
 }
